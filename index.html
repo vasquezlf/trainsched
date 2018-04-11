@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Train Scheduler | Firebase Demo Assignment </title>
+    <!-- Google+ Api Login -->
+    <meta name="google-signin-client_id" content="328545936910-st63jupsu23ab32eb9ljd8v3bjp9roli.apps.googleusercontent.com">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">    
+    <!-- Semantic-UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body>
+        <!-- NAV -->
+    
+  <div class="ui sidebar vertical left inverted labeled main icon menu">
+      <a href="https://vasquezlf.github.io/" class="item"><i class="icon home"></i>Home</a>
+      <!-- <a href="#" class="item"><i class="icon code"></i>Portfolio</a> -->
+      <div class="item">
+        <div class="header">Portfolio</div>
+        <div class="menu">
+          <a href='https://vasquezlf.github.io/hangman/' class="item">Hangman</a>
+          <a href='https://vasquezlf.github.io/crystalcollector/' class="item">Crystal Collector</a>
+          <a href='https://vasquezlf.github.io/triviagame/' class="item">Trivia Game</a>
+          <a href='https://vasquezlf.github.io/giffygenerator/' class="item">Giffy Generator</a>
+          <a href='https://vasquezlf.github.io/giffygenerator/' class="item">Train Scheduler</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui basic inverted icon top fixed menu">
+      <a class="item" id="menu-toggle">
+        <i class="sidebar icon"></i>
+        Menu
+      </a>
+      <div class="right menu">
+        <a class="item">Lorenzo Vasquez | Full-Stack Developer</a>
+      </div>
+    </div>
+    <div class="pusher">  <!-- CONTENT being pushed aside when menu is toggled -->
+
+
+    <main class="ui container ">
+      <!-- 1. Starting UI -->
+      <h1 class="ui centered header segment inverted blue">Train Scheduler</h1>
+      <div class="ui segment">
+          <h3 class="ui header">Current Train Schedule</h3>
+          <div class="ui sub header">Time: <span id="current-time">00:00</span></div>
+          <table class="ui table" id='train-schedule-table'>
+            <thead><tr>
+              <th>Train Name</th>
+              <th>Destination</th> 
+              <th>Frequency (min)</th>
+              <th>Next Arrival</th>
+              <th>Minutes Away</th>
+            </tr></thead>
+            <tbody>
+              <!-- *************** START TEST DATA ************* -->
+              <!-- **** Generate Tags Dynamically START -->
+              <!-- <tr>
+                <td>Trenton Express</td>
+                <td>Trenton</td>
+                <td>25</td>
+                <td>05:35 PM</td>
+                <td>10</td>
+              </tr> -->
+              <!-- **** Generate Tags Dynamically END -->
+              <!-- <tr>
+                <td>Oregon Trail</td>
+                <td>Salem, Oregon</td>
+                <td>45</td>
+                <td>06:12 PM</td>
+                <td>25</td>
+              </tr> -->
+              <!-- *************** END TEST DATA ************* -->
+              
+            </tbody>
+          </table>
+          
+        </div>
+        <!-- 2. START Train Schedule -->
+        <div class="ui form segment">
+            <h3 class="ui dividing header" id="results-header">Results:</h3>
+            <div class="ui divided items" id='articles-container'></div>
+          <!-- **** Start div.item for form ***** -->
+            <div class="item" id="employee-input-form">
+              <form>
+                <div class="two fields">
+                  <div class="field">
+                    <label>Train Name:</label>
+                    <input id="train-name-input" type="text" name="train-name-input" placeholder="">
+                  </div>
+                  <div class="field">
+                      <label>Destination:</label>
+                      <input id="destination-input" type="text" name="destination-input" placeholder="">
+                  </div>
+                </div>
+                <div class="two fields">
+                  <div class="field">
+                      <label>First Train Time:</label>
+                      <input id="first-time-input" type="time" name="first-time-input" placeholder="HHMM">
+                  </div>
+                  <div class="field">
+                    <label>Frequency (min):</label>
+                    <input id="frequency-input" type="number" name="frequency-input" placeholder="">
+                  </div>
+                </div>
+              <div class="ui center aligned container">
+                <button class="ui button blue " type="submit" id="add-user-button"><i class="ui icon search"></i>Submit</button>
+                <button class="ui button blue centered" type="submit" id="clear-button"><i class="ui icon eraser"></i>Clear Results</button>
+              </div>
+            </form>
+          </div> <!-- END div.item -->
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </main>  
+
+      
+
+  </div>  <!-- END **** div.pusher **** -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Google API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script type="text/javascript" src="app.js"></script>
+    <!-- SemanticUI JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+  </body>
+</html>
